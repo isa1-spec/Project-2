@@ -1,1 +1,491 @@
 
+
+:root {
+  --black: #000000;
+  --purple: #972e8d;
+  --blue: #819dd7;
+  --white: #ffffff;
+
+  --title-font: "cc-pixel-arcade-cartridge", "Courier New", monospace;
+  --body-font: "logic-monospace", "Courier New", monospace;
+}
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--white);
+
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 18px;
+  line-height: 1.6;
+
+  margin: 0;
+  padding: 30px 20px;
+  min-height: 100vh;
+
+  isolation: isolate;
+  overflow-wrap: anywhere;
+}
+
+
+
+h1,
+#page-title {
+  color: var(--white);
+
+  font-family: var(--title-font);
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: clamp(30px, 6vw, 65px);
+  line-height: 1.2;
+
+  text-align: center;
+
+  margin: 20px 0 30px;
+
+  -webkit-text-stroke: 0;
+}
+
+
+
+#page-title a,
+#page-title a:visited,
+#page-title a:hover,
+#page-title a:active {
+  color: var(--white);
+
+  font-family: var(--title-font) !important;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: inherit;
+  line-height: inherit;
+
+  text-decoration: none;
+  -webkit-text-stroke: 0;
+}
+
+#page-title a {
+  display: inline-block;
+}
+
+#page-title a:hover {
+  cursor: pointer;
+}
+
+
+h2 {
+  color: var(--blue);
+
+  font-family: var(--body-font);
+  font-weight: 400;
+
+  font-size: clamp(22px, 3vw, 30px);
+  line-height: 1.3;
+
+  text-align: center;
+
+  border-bottom: 3px solid var(--purple);
+
+  padding-bottom: 12px;
+  margin: 0 0 20px;
+}
+
+h3 {
+  color: var(--white);
+
+  font-family: var(--body-font);
+  font-weight: 400;
+
+  font-size: clamp(20px, 3vw, 28px);
+
+  margin: 20px 0 12px;
+}
+
+
+
+p {
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-size: clamp(16px, 1.5vw, 19px);
+
+  line-height: 1.7;
+  margin: 16px 0;
+}
+
+
+
+a {
+  color: var(--blue);
+
+  font-family: var(--body-font);
+  font-weight: 400;
+  font-style: italic;
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--white);
+  text-decoration-color: var(--purple);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 4px;
+}
+
+
+
+header,
+footer {
+  font-family: var(--body-font);
+  font-weight: 300;
+
+  font-size: 16px;
+  text-align: center;
+}
+
+.site-header {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+footer {
+  max-width: 1100px;
+  width: 100%;
+  margin: 30px auto;
+}
+
+
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+}
+
+nav a {
+  display: inline-block;
+
+  color: var(--blue);
+  background: var(--black);
+
+  border: 2px outset var(--blue);
+
+  padding: 8px 12px;
+
+  font-size: 15px;
+  font-weight: 300;
+
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--white);
+  border-color: var(--purple);
+}
+
+
+
+.homepage {
+  text-align: center;
+}
+
+.home-layout {
+  display: grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: 24px;
+  align-items: start;
+
+  max-width: 1100px;
+  width: 100%;
+
+  margin: 0 auto;
+}
+
+.home-content {
+  min-width: 0;
+  width: 100%;
+}
+
+
+
+.window {
+  background-color: var(--black);
+
+  border: 3px ridge var(--blue);
+
+  padding: 20px;
+  margin: 0 0 24px;
+
+  min-width: 0;
+  width: 100%;
+
+  text-align: left;
+}
+
+.window h2 {
+  background-color: var(--purple);
+  color: var(--white);
+
+  border: 0;
+
+  padding: 10px 12px;
+  margin: -20px -20px 20px;
+
+  font-size: 20px;
+  text-align: left;
+}
+
+.window p {
+  font-size: 16px;
+}
+
+
+
+button {
+  padding: 10px 14px;
+
+  background: var(--blue);
+  color: var(--black);
+
+  border: 3px outset var(--white);
+
+  font-family: var(--body-font);
+  font-size: 15px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--white);
+}
+
+button:active {
+  border-style: inset;
+}
+
+
+
+.portfolio-links {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.portfolio-links a {
+  flex: 1 1 140px;
+
+  min-width: 0;
+
+  border: 2px outset var(--blue);
+
+  padding: 10px;
+
+  background: var(--black);
+
+  text-align: center;
+
+  text-decoration: none;
+}
+
+.portfolio-links a:hover {
+  border-color: var(--purple);
+}
+
+
+
+.image-space {
+  display: block;
+
+  width: 100%;
+  min-height: 140px;
+
+  margin: 0 0 12px;
+
+  border: 1px dashed var(--blue);
+}
+
+#critters .image-space {
+  min-height: 220px;
+  margin: 20px 0 0;
+}
+
+
+
+img {
+  display: block;
+
+  width: 400px;
+  max-width: 100%;
+
+  height: auto;
+
+  border: 3px solid var(--purple);
+  border-radius: 0;
+
+  margin: 20px auto;
+}
+
+.portfolio-image,
+.critters-image {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  height: auto;
+
+  border: 0;
+  border-radius: 0;
+}
+
+.homepage img {
+  margin: 25px auto 0;
+}
+
+
+iframe {
+  display: block;
+
+  width: 100%;
+  height: 300px;
+
+  border: 0;
+}
+
+
+
+.highlight {
+  background-color: var(--purple);
+  color: var(--white);
+
+  padding: 4px 8px;
+
+  font-size: 20px;
+  font-weight: 400;
+
+  border-radius: 4px;
+}
+
+
+
+
+li {
+  color: var(--white);
+  margin: 12px 0;
+}
+
+li::marker {
+  color: var(--blue);
+}
+
+.homepage ul {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+
+
+
+.benito-play {
+  margin: 30px auto;
+  text-align: center;
+}
+
+#fact-button {
+  display: block;
+
+  width: 450px;
+  max-width: 100%;
+
+  margin: 0 auto;
+
+  cursor: pointer;
+
+  font: inherit;
+  color: inherit;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+#fact-button img {
+  width: 100%;
+  height: auto;
+
+  margin: 0;
+
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+
+@media (max-width: 700px) {
+
+  body {
+    padding: 16px;
+  }
+
+  .home-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .window {
+    padding: 16px;
+  }
+
+  .window h2 {
+    margin: -16px -16px 16px;
+  }
+
+  #page-title {
+    font-size: clamp(28px, 8vw, 45px);
+  }
+
+  .portfolio-links a {
+    flex: 1 1 100%;
+  }
+
+  iframe {
+    height: 250px;
+  }
+
+}
+
+
