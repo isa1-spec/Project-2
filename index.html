@@ -1,1 +1,168 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Isa's Things &amp; Stuff | Home</title>
+
+
+  <link rel="stylesheet" href="https://use.typekit.net/xah2uxc.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="homepage">
+
+
+  <header class="site-header">
+
+    <h1 id="page-title">
+  <a href="index.html">ISA'S THINGS &amp; STUFF</a>
+</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home / About</a>
+      <a href="page2.html">Collage</a>
+      <a href="page3.html">Illustration / Motion</a>
+    </nav>
+
+  </header>
+
+
+  <main class="home-layout">
+
+    <section class="window" aria-labelledby="about-title">
+
+      <h2 id="about-title">ABOUT</h2>
+
+      <p>
+        My name is Isa and this is only my second website I have ever
+        coded :0!!! It is small, but mighty. Click through the pages to
+        see some of the artwork I've made over the years. This includes
+        collages, animations, and illustrations.
+      </p>
+
+      <p>
+        I love sharing my work with other people and hearing what it
+        made them think or feel. I will keep updating this site as I
+        keep making things and stuff!
+      </p>
+
+      <p>
+        If you want to let me know what you think or feel,
+        <a href="mailto:icastropenate1@toromail.csudh.edu">email me</a>.
+      </p>
+
+    </section>
+
+    <div class="home-content">
+
+     
+      <section class="window" aria-labelledby="animation-title">
+
+        <h2 id="animation-title">A LITTLE SECRET...</h2>
+
+        <p>Come hop around with us, we're all hoppy here!</p>
+
+        <button
+          type="button"
+          id="truth-button"
+          aria-expanded="false"
+          aria-controls="critters">
+
+          click here for the truth
+
+        </button>
+
+        <div id="critters" hidden>
+
+          <img
+            class="critters-image"
+            src="images/critters.gif"
+            alt="Small critters hopping around together"
+            loading="lazy">
+
+        </div>
+
+      </section>
+
+ 
+      <section class="window" aria-labelledby="location-title">
+
+        <h2 id="location-title">LOCATION</h2>
+
+        <p>
+          Rumor has it that this place might contain magic,
+          I can't wait to check it out!
+        </p>
+
+        <p>
+          <strong>Laguna de Alegría, El Salvador</strong>
+        </p>
+
+        <iframe
+          title="Map showing Laguna de Alegría in El Salvador"
+          src="https://maps.google.com/maps?q=Laguna%20de%20Alegr%C3%ADa%2C%20El%20Salvador&amp;z=13&amp;output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+
+        <p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&amp;query=Laguna%20de%20Alegr%C3%ADa%2C%20El%20Salvador"
+            target="_blank"
+            rel="noopener noreferrer">
+            Check it out!
+          </a>
+        </p>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  
+  <footer>
+
+    <p>Made by Isa &hearts;</p>
+
+    <a href="mailto:icastropenate1@toromail.csudh.edu">Email me</a>
+
+    &middot;
+
+    <a href="credits.html">Credits &amp; coding sources</a>
+
+  </footer>
+
+
+  <script>
+
+    const truthButton = document.getElementById("truth-button");
+    const critters = document.getElementById("critters");
+
+    truthButton.addEventListener("click", function () {
+
+      const isOpening = critters.hidden;
+
+      critters.hidden = !isOpening;
+
+      truthButton.setAttribute(
+        "aria-expanded",
+        String(isOpening)
+      );
+
+      truthButton.textContent = isOpening
+        ? "hide the little critters"
+        : "click here for the truth";
+
+    });
+
+  </script>
+
+</body>
+</html>
+
