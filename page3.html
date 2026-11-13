@@ -1,1 +1,203 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Isa's Things &amp; Stuff | Illustration / Motion</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/xah2uxc.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="illustration-page">
+
+
+  <header class="site-header">
+
+    <h1 id="page-title">
+  <a href="index.html">ISA'S THINGS &amp; STUFF</a>
+</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home / About</a>
+      <a href="page2.html">Collage</a>
+      <a href="page3.html" aria-current="page">Illustration / Motion</a>
+    </nav>
+
+  </header>
+
+  <main class="page-container">
+
+   
+    <div class="illustration-heading">
+
+      <h2 class="page-heading">ILLUSTRATION / MOTION</h2>
+
+      <button
+        type="button"
+        id="faq-button"
+        aria-expanded="false"
+        aria-controls="faq-content">
+
+        FAQ
+
+      </button>
+
+    </div>
+
+
+    <section id="faq-content" class="faq-box" hidden>
+
+      <h3>FREQUENTLY ASKED QUESTIONS</h3>
+
+      <p><strong>1) What is your name?</strong></p>
+      <p>A) Isa</p>
+
+      <p><strong>2) What is your favorite color?</strong></p>
+      <p>A) Pink!</p>
+
+      <p><strong>3) What is your saddest memory?</strong></p>
+      <p>A) March 18, 2007</p>
+
+    </section>
+
+
+    <section class="window">
+
+      <h3>DIGITAL HALLOWEEN CARD</h3>
+
+      <p>A little motion project by ISA.</p>
+
+      <a
+        href="https://photos.app.goo.gl/nJ4vgyPKcYd6sfbH7"
+        target="_blank"
+        rel="noopener noreferrer">
+
+        Watch my Digital Halloween Card!
+
+      </a>
+
+    </section>
+
+   
+    <section class="illustration-gallery">
+
+     
+      <div class="artwork-box artwork-small">
+
+        <img
+          src="images/lasantacena.jpg"
+          alt="Black and white charcoal drawing of a mouse holding a sausage."
+          loading="lazy">
+
+        <p>La santa cena</p>
+
+      </div>
+
+    
+      <div class="artwork-box artwork-large">
+
+        <img
+          src="images/everyonesaweiner.jpg"
+          alt="White chalk drawing of a beer bottle next to a prayer candle."
+          loading="lazy">
+
+        <p>Everyone's a Weiner!</p>
+
+      </div>
+
+
+      <div class="artwork-box artwork-wide">
+
+        <img
+          src="images/dogs.jpg"
+          alt="Mixed media black and white landscape drawing of a young Dalmatian looking down on a Boston Dynamics robot dog, with two human hands hovering above the canines."
+          loading="lazy">
+
+        <p>Untitled</p>
+
+      </div>
+
+
+      <div class="artwork-box artwork-circle">
+
+        <img
+          src="images/star.jpg"
+          alt="Illustration artwork by Isa."
+          loading="lazy">
+
+        <p>Star</p>
+
+      </div>
+
+     
+      <div class="artwork-box artwork-feature">
+
+        <img
+          src="images/teddy.jpg"
+          alt="Illustration artwork by Isa."
+          loading="lazy">
+
+        <p>Teddy</p>
+
+      </div>
+
+    </section>
+
+
+    <section class="window">
+
+      <p>
+        SURPRISE
+      </p>
+
+     
+
+    </section>
+
+  </main>
+
+  
+  <footer>
+
+    <p>Made by Isa &hearts;</p>
+
+    <a href="mailto:icastropenate1@toromail.csudh.edu">Email me</a>
+
+    &middot;
+
+    <a href="credits.html">Credits &amp; coding sources</a>
+
+  </footer>
+
+ 
+  <script>
+
+    const faqButton = document.getElementById("faq-button");
+    const faqContent = document.getElementById("faq-content");
+
+    faqButton.addEventListener("click", function() {
+
+      const isOpening = faqContent.hidden;
+
+      faqContent.hidden = !isOpening;
+
+      faqButton.setAttribute(
+        "aria-expanded",
+        String(isOpening)
+      );
+
+      faqButton.textContent = isOpening
+        ? "CLOSE FAQ"
+        : "FAQ";
+
+    });
+
+  </script>
+
+</body>
+</html>
+
+
