@@ -1,1 +1,277 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Isa's Things &amp; Stuff | Collage</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/xah2uxc.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="collage-page">
+
+
+  <header class="site-header">
+
+    <h1 id="page-title">
+  <a href="index.html">ISA'S THINGS &amp; STUFF</a>
+</h1>
+
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home / About</a>
+      <a href="page2.html" aria-current="page">Collage</a>
+      <a href="page3.html">Illustration / Motion</a>
+    </nav>
+
+  </header>
+
+  <main class="page-container">
+
+    <h2 class="page-heading">COLLAGE</h2>
+
+  
+    <section class="collage-layout">
+
+      
+      <aside class="audio-box">
+
+        <h3>LISTEN TO ME!</h3>
+
+        <p>A little something to listen to while you look around.</p>
+
+        <button
+          type="button"
+          id="audio-button"
+          aria-expanded="false"
+          aria-controls="audio-content">
+
+          LISTEN TO ME!
+
+        </button>
+
+        <div id="audio-content" hidden>
+
+          <p id="sound-name">Select an artwork to hear its sound.</p>
+
+          <audio id="collage-audio" controls>
+            Your browser does not support audio.
+          </audio>
+
+        </div>
+
+      </aside>
+
+   
+      <section class="collage-gallery">
+
+        <div class="carousel-container">
+
+          <button
+            class="carousel-arrow"
+            id="previous-image"
+            type="button"
+            aria-label="Previous collage image">
+
+            &#8592;
+
+          </button>
+
+          <div class="carousel-image-area">
+
+            <img
+              id="collage-image"
+              src="images/believeitornot.jpg"
+              alt="Surrealist collage showing fish, eyes, mouths, bold text reading curioddities, and towing service business cards.">
+
+          </div>
+
+          <button
+            class="carousel-arrow"
+            id="next-image"
+            type="button"
+            aria-label="Next collage image">
+
+            &#8594;
+
+          </button>
+
+        </div>
+
+        <p id="image-caption" class="gallery-caption">
+          Believe It or Not!
+        </p>
+
+        
+        <div class="carousel-dots">
+
+          <button class="carousel-dot active"
+            type="button" aria-label="Show collage image 1"></button>
+
+          <button class="carousel-dot"
+            type="button" aria-label="Show collage image 2"></button>
+
+          <button class="carousel-dot"
+            type="button" aria-label="Show collage image 3"></button>
+
+          <button class="carousel-dot"
+            type="button" aria-label="Show collage image 4"></button>
+
+          <button class="carousel-dot"
+            type="button" aria-label="Show collage image 5"></button>
+
+          <button class="carousel-dot"
+            type="button" aria-label="Show collage image 6"></button>
+
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>Made by Isa &hearts;</p>
+
+    <a href="mailto:icastropenate1@toromail.csudh.edu">Email me</a>
+
+    &middot;
+
+    <a href="credits.html">Credits &amp; coding sources</a>
+
+  </footer>
+
+  
+  <script>
+
+    const collageImages = [
+
+      {
+        src: "images/believeitornot.jpg",
+        alt: "Surrealist collage showing fish, eyes, mouths, bold text reading curioddities, and towing service business cards.",
+        caption: "Believe It or Not!",
+        sound: "audio/believeitornot.mp3"
+      },
+
+      {
+        src: "images/bathroomscene.jpg",
+        alt: "Surrealist collage showing a man's face being stretched, a tattooed older woman, fish, puppets, text reading seriously weird, a parakeet, rats, and werewolves.",
+        caption: "A scene from this guy's bathroom.",
+        sound: "audio/bathroomscene.mp3"
+      },
+
+      {
+        src: "images/analog.jpg",
+        alt: "Surrealist collage showing a line drawing, teeth, fish, water, a bathtub, small text, and bugs.",
+        caption: "Analog",
+        sound: "audio/analog.mp3"
+      },
+
+      {
+        src: "images/castro_baby.jpg",
+        alt: "Surrealist collage showing a chest on fire, a bloodied doll head, fish, and clay.",
+        caption: "castro_baby.jpg",
+        sound: "audio/castro_baby.mp3"
+      },
+
+      {
+        src: "images/conjoinedkittens.jpg",
+        alt: "Surrealist collage showing conjoined kittens, robot parts, birds, a snake, foxes, a phone, and a mouth.",
+        caption: "Conjoined Kittens",
+        sound: "audio/conjoinedkittens.mp3"
+      },
+
+      {
+        src: "images/marysboy.jpg",
+        alt: "Surrealist collage showing Michelangelo's Pieta, a snake, snowy mountains, tiger cubs, and bees.",
+        caption: "Mary Had a Little Boy",
+        sound: "audio/marysboy.mp3"
+      }
+
+    ];
+
+    let currentImage = 0;
+
+    const collageImage = document.getElementById("collage-image");
+    const imageCaption = document.getElementById("image-caption");
+    const dots = document.querySelectorAll(".carousel-dot");
+
+    const audioButton = document.getElementById("audio-button");
+    const audioContent = document.getElementById("audio-content");
+    const collageAudio = document.getElementById("collage-audio");
+    const soundName = document.getElementById("sound-name");
+
+    function showImage(index) {
+
+      currentImage =
+        (index + collageImages.length) % collageImages.length;
+
+      const artwork = collageImages[currentImage];
+
+      collageImage.src = artwork.src;
+      collageImage.alt = artwork.alt;
+
+      imageCaption.textContent = artwork.caption;
+
+      dots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === currentImage);
+      });
+
+      // Update audio when the artwork changes
+      collageAudio.pause();
+      collageAudio.src = artwork.sound;
+      collageAudio.load();
+
+      soundName.textContent = "Sound file: " + artwork.sound;
+
+    }
+
+    document.getElementById("previous-image").addEventListener(
+      "click", function() {
+        showImage(currentImage - 1);
+      }
+    );
+
+    document.getElementById("next-image").addEventListener(
+      "click", function() {
+        showImage(currentImage + 1);
+      }
+    );
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", function() {
+        showImage(index);
+      });
+    });
+
+    // Reveal audio player
+    audioButton.addEventListener("click", function() {
+
+      const isOpening = audioContent.hidden;
+
+      audioContent.hidden = !isOpening;
+
+      audioButton.setAttribute(
+        "aria-expanded",
+        String(isOpening)
+      );
+
+      audioButton.textContent = isOpening
+        ? "HIDE AUDIO"
+        : "LISTEN TO ME!";
+
+    });
+
+    // Set the first artwork's sound
+    showImage(0);
+
+  </script>
+
+</body>
+</html>
+
